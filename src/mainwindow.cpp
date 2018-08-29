@@ -81,6 +81,14 @@ void MainWindow::updateQRImage()
     obj.insert("money", QJsonValue(strMoney));
     obj.insert("type", QJsonValue("make_collections_QRCode"));
 
+    QString memo = ui->textEditMemo->toPlainText();
+    if (memo.size() > 256) {
+        QMessageBox::warning(nullptr, "Error", "Memo too long!");
+        return;
+    }
+
+    obj.insert("memo", QJsonValue(memo));
+
     QByteArray encodeString = QJsonDocument(obj).toJson();
 
     successfulEncoding = qrEncode.EncodeData( levelIndex, versionIndex, bExtent, maskIndex, encodeString.constData());
