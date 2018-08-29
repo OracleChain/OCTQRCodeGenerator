@@ -74,12 +74,21 @@ void MainWindow::updateQRImage()
 
     QJsonObject obj;
     obj.insert("account_name", QJsonValue(account_name));
-    obj.insert("coin", QJsonValue("OCT"));
 
     double money = ui->doubleSpinBoxMoney->value() * ui->doubleSpinBoxScale->value();
     QString strMoney = QString::number(money, 'f', 4);
-    obj.insert("money", QJsonValue(strMoney));
-    obj.insert("type", QJsonValue("make_collections_QRCode"));
+    obj.insert("quantity", QJsonValue(strMoney));
+    obj.insert("type", QJsonValue("token_make_collections_QRCode"));
+
+    // we should use current data, but for now, just current text.
+    QString token = ui->comboBox->currentText();
+    if (token == "OCT") {
+        obj.insert("contract", QJsonValue("octtothemoon"));
+        obj.insert("token", QJsonValue("OCT"));
+    } else if (token == "EOS"){
+        obj.insert("contract", QJsonValue("eosio.token"));
+        obj.insert("token", QJsonValue("EOS"));
+    }
 
     QString memo = ui->textEditMemo->toPlainText();
     if (memo.size() > 256) {

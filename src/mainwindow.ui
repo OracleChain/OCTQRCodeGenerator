@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>412</width>
-    <height>480</height>
+    <height>632</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -19,20 +19,20 @@
   <property name="maximumSize">
    <size>
     <width>412</width>
-    <height>480</height>
+    <height>632</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>OCT-QRCodeGenerator</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,0,0,0,0,0,0,0,0">
+   <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,0,0,0,0,0,0,0,0,0,0,0">
     <item>
      <widget class="QLabel" name="image_label">
       <property name="minimumSize">
        <size>
         <width>0</width>
-        <height>200</height>
+        <height>300</height>
        </size>
       </property>
       <property name="frameShape">
@@ -58,6 +58,27 @@
     </item>
     <item>
      <widget class="QLineEdit" name="lineEditAccountName"/>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Token:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="comboBox">
+      <item>
+       <property name="text">
+        <string>OCT</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>EOS</string>
+       </property>
+      </item>
+     </widget>
     </item>
     <item>
      <widget class="QLabel" name="label_2">
@@ -98,14 +119,21 @@
        <double>0.000100000000000</double>
       </property>
       <property name="value">
-       <double>1.048000000000000</double>
+       <double>1.000000000000000</double>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Memo:</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QTextEdit" name="textEditMemo">
       <property name="placeholderText">
-       <string>memo</string>
+       <string/>
       </property>
      </widget>
     </item>
